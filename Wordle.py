@@ -1,24 +1,39 @@
-# Store the target word
+from tkinter import *
+
 target = "slack"
 
-# Loop through 5 times, giving the user 5 chances to guess the target word
-for i in range(5):
-    guess = input("Guess the Wordle: ")
+def myClick():
+    guess = e.get()
     if guess == target:
-        print("You got it!")
-        break
+        myLabel3 = Label(root, text="_____________________") 
+        myLabel3.pack()
+        myLabel2 = Label(root, text="You got it!",height=3)
+        myLabel2.pack()
+        
     else:
+        myLabel3 = Label(root, text="_____________________") 
+        myLabel3.pack()
         # Loop through the user's guess, returning the position and value
         for t,value in enumerate(guess):
             # Determine if the value of each letter in the user's guess is equal to the value in the same position of the target word
             if value == target[t]:
-                print("The letter",value,"is in position",t+1)
+                myLabel = Label(root, text="The letter {} is in position {}".format(value,t+1))
+                myLabel.pack()
+                    
             # Determine if the letter in the user's guess is in the target word but was not guessed in the correct position
             elif value in target:
-                print("The letter",value,"is in the word, but not in position", t+1)
-if guess == target:
-    pass
-else:
-    print("You're out of tries! The word was:",target)
+                myLabel1 = Label(root, text="The letter {} is in the word, but not in position {}".format(value,t+1))
+                myLabel1.pack()
+
+
+root = Tk()
+e = Entry(root, width=50)
+e.pack()
+myButton = Button(root, text="Guess the Wordle!", padx=30, pady=5,command = myClick)
+myButton.pack()
+
+root.mainloop()
+
+
 
     
