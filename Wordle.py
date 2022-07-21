@@ -5,14 +5,14 @@ target = "slack"
 def myClick():
     guess = e.get()
     if guess == target:
-        myLabel3 = Label(root, text="_____________________") 
-        myLabel3.pack()
-        myLabel2 = Label(root, text="You got it!",height=3)
-        myLabel2.pack()
+        myLabel = Label(root, text="_____________________") 
+        myLabel.pack()
+        myLabel = Label(root, text="You got it!",height=3)
+        myLabel.pack()
         
     else:
-        myLabel3 = Label(root, text="_____________________") 
-        myLabel3.pack()
+        myLabel = Label(root, text="_____________________") 
+        myLabel.pack()
         # Loop through the user's guess, returning the position and value
         for t,value in enumerate(guess):
             # Determine if the value of each letter in the user's guess is equal to the value in the same position of the target word
@@ -22,8 +22,8 @@ def myClick():
                     
             # Determine if the letter in the user's guess is in the target word but was not guessed in the correct position
             elif value in target:
-                myLabel1 = Label(root, text="The letter {} is in the word, but not in position {}".format(value,t+1))
-                myLabel1.pack()
+                myLabel = Label(root, text="The letter {} is in the word, but not in position {}".format(value,t+1))
+                myLabel.pack()
 
 
 root = Tk()
