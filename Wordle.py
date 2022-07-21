@@ -39,7 +39,7 @@ e.pack(ipady=3)
 myButton = Button(root, text="Guess the Wordle!", padx=30, pady=7,command = myClick)
 myButton.pack()
 
-# Runs the even loop for the root window
+# Runs the event loop for the root window
 root.mainloop()
 
 
