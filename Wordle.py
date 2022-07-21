@@ -2,6 +2,7 @@ from tkinter import *
 
 target = "slack"
 
+# Principle game function, a player attempts to guess a secret word and is given hints if they guess a letter that is contained in the secret word
 def myClick():
     guess = e.get()
     if guess == target:
@@ -25,17 +26,20 @@ def myClick():
                 myLabel = Label(root, text="The letter {} is in the word, but not in position {}".format(value,t+1))
                 myLabel.pack()
 
-
+# Create the root window
 root = Tk()
 root.title("Completely Unique Word Game")
 root.geometry('350x500')
 
+# Create the input field
 e = Entry(root, width=20)
 e.pack(ipady=3)
 
+# Create the button that calls the game function when clicked
 myButton = Button(root, text="Guess the Wordle!", padx=30, pady=7,command = myClick)
 myButton.pack()
 
+# Runs the even loop for the root window
 root.mainloop()
 
 
