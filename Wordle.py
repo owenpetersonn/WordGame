@@ -1,4 +1,5 @@
 from tkinter import *
+from turtle import bgcolor
 
 target = "slack"
 
@@ -27,9 +28,13 @@ def myClick():
 
 
 root = Tk()
-e = Entry(root, width=50)
-e.pack()
-myButton = Button(root, text="Guess the Wordle!", padx=30, pady=5,command = myClick)
+root.title("Completely Unique Word Game")
+root.geometry('350x500')
+
+e = Entry(root, width=20)
+e.pack(ipady=3)
+
+myButton = Button(root, text="Guess the Wordle!", padx=30, pady=7,command = myClick)
 myButton.pack()
 
 root.mainloop()
