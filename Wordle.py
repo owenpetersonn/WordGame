@@ -1,5 +1,5 @@
 # Store the target word
-target = "osvjud"
+target = "slack"
 
 # Loop through 5 times, giving the user 5 chances to guess the target word
 for i in range(5):
